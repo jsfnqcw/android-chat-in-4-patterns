@@ -1,4 +1,4 @@
-package nju.androidchat.client.mvp0;
+package nju.androidchat.client.hw1;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -24,19 +24,19 @@ import nju.androidchat.client.component.ItemTextSend;
 import nju.androidchat.client.component.OnRecallMessageRequested;
 
 @Log
-public class Mvp0TalkActivity extends AppCompatActivity implements Mvp0Contract.View, TextView.OnEditorActionListener, OnRecallMessageRequested {
-    private Mvp0Contract.Presenter presenter;
+public class Hw1TalkActivity extends AppCompatActivity implements Hw1Contract.View, TextView.OnEditorActionListener, OnRecallMessageRequested {
+    private Hw1Contract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        nju.androidchat.client.mvp0.Mvp0TalkModel Mvp0TalkModel = new nju.androidchat.client.mvp0.Mvp0TalkModel();
+        nju.androidchat.client.hw1.Hw1TalkModel Hw1TalkModel = new nju.androidchat.client.hw1.Hw1TalkModel();
 
         // Create the presenter
-        this.presenter = new nju.androidchat.client.mvp0.Mvp0TalkPresenter(Mvp0TalkModel, this, new ArrayList<>());
-        Mvp0TalkModel.setIMvp0TalkPresenter(this.presenter);
+        this.presenter = new nju.androidchat.client.hw1.Hw1TalkPresenter(Hw1TalkModel, this, new ArrayList<>());
+        Hw1TalkModel.setIHw1TalkPresenter(this.presenter);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class Mvp0TalkActivity extends AppCompatActivity implements Mvp0Contract.
     }
 
     @Override
-    public void setPresenter(Mvp0Contract.Presenter presenter) {
+    public void setPresenter(Hw1Contract.Presenter presenter) {
         this.presenter = presenter;
     }
 

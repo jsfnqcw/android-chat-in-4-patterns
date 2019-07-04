@@ -1,4 +1,4 @@
-package nju.androidchat.client.mvp0;
+package nju.androidchat.client.hw1;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,14 +15,14 @@ import nju.androidchat.shared.message.RecallMessage;
 import nju.androidchat.shared.message.ServerSendMessage;
 
 @Log
-public class Mvp0TalkModel implements MessageListener, Mvp0Contract.Model {
+public class Hw1TalkModel implements MessageListener, Hw1Contract.Model {
 
     private SocketClient client;
 
     @Setter
-    private Mvp0Contract.Presenter iMvp0TalkPresenter;
+    private Hw1Contract.Presenter iHw1TalkPresenter;
 
-    public Mvp0TalkModel() {
+    public Hw1TalkModel() {
         this.client = SocketClient.getClient();
         // Model本身去注册Socket的消息接受事件
         client.setMessageListener(this);
@@ -54,7 +54,7 @@ public class Mvp0TalkModel implements MessageListener, Mvp0Contract.Model {
                     serverSendMessage.getSenderUsername(),
                     serverSendMessage.getMessage()
             ));
-            iMvp0TalkPresenter.receiveMessage(new ClientMessage(serverSendMessage));
+            iHw1TalkPresenter.receiveMessage(new ClientMessage(serverSendMessage));
         } else if (message instanceof ErrorMessage) {
             // 接收到服务器的错误消息
             log.severe("Server error: " + ((ErrorMessage) message).getErrorMessage());

@@ -1,0 +1,5 @@
+实现思路：
+
+修改Component中的 ItemTextSend，使其中的setText方法升级为setContent方法，功能由渲染文本变为渲染文本或图片。
+
+如果要强行把显示文本还是图片的职能分给Presenter感觉还需要增加ImageView和对应的XML布局，感觉太烦了就没这么搞了。
